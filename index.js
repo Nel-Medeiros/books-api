@@ -35,12 +35,12 @@ const logger = winston.createLogger({
 app.use('/api/books', booksRoute);
 
 //Connect to mongoDb Atlas
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
-    .then(() => {
-        logger.info('Connected to MongoDb');
-    }).catch(err => {
-        logger.error(err.message);
-    });
+mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true, useNewUrlParser: true });
+const connection = mongoose.connection;
+
+connection.once("open", () => {
+    console.log("MongoDB database connection established successfully");
+});
 
 //Start the Server
 app.listen(PORT, () => {
