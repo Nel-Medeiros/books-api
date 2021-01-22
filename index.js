@@ -7,7 +7,7 @@ const winston = require('winston');
 
 const PORT = process.env.PORT || 3000;
 
-//Middlewares
+//Middlewares //
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
