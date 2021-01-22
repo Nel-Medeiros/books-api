@@ -43,6 +43,6 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
     });
 
 //Start the Server
-app.listen(PORT, () => {
-    logger.warn(`Server started at port ${PORT}.`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Express server running.");
 });
