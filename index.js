@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const booksRoute = require('../books-api/routes/books');
+const booksRoute = require('./routes/books');
 const winston = require('winston');
 
 const PORT = process.env.PORT || 3000;
