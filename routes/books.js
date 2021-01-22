@@ -31,7 +31,8 @@ router.get("/", (req, res) => {
             res.send(books)
         })
         .catch(err => {
-            res.status(500).send('We got an error.')
+            res.status(500).send('We got an error.');
+            console.log(err.message);
         })
 })
 
