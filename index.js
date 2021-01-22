@@ -7,7 +7,7 @@ const winston = require('winston');
 
 const PORT = process.env.PORT || 3000;
 
-//Middlewares //
+//Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -43,6 +43,6 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
     });
 
 //Start the Server
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Express server running.");
+app.listen(PORT, () => {
+    logger.warn(`Server started at port ${PORT}.`);
 });
