@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     });
 });
 
-//GET: GET ALL BOOKS
+//GET: GET ALL BOOKS //
 router.get("/", (req, res) => {
     Book
         .find()
