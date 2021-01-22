@@ -24,8 +24,8 @@ router.post('/', async (req, res) => {
 });
 
 //GET: GET ALL BOOKS
-router.get("/", async (req, res) => {
-    await Book
+router.get("/", (req, res) => {
+    Book
         .find()
         .then((books) => {
             res.send(books)
