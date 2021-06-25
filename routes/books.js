@@ -39,7 +39,7 @@ router.get("/", (req, res) => {
 //GET: GET BOOK BY ID
 router.get("/:bookId", async (req, res) => {
     const book = await Book.findById(req.params.bookId);
-    if (!book) res.status(404).send('Book not found.');
+    if (!book) res.status(404).send('No book found here!');
     res.send(book);
 });
 
